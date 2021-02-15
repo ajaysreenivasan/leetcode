@@ -16,12 +16,7 @@ class Solution:
 
 
 def main():
-    s = Solution()
-
-    nums = [2, 7, 11, 15]
-    target = 9
-
-    print(s.twoSum(nums, target))
-
+    # THIS METHOD INTENTIONALLY LEFT EMPTY
+    pass
 
 main()
