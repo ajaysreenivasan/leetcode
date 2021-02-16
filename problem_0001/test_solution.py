@@ -1,6 +1,6 @@
 from solution import Solution 
 
-def test_one():
+def test_normal_case():
     s = Solution()
 
     nums = [2, 7, 11, 15]
@@ -9,3 +9,14 @@ def test_one():
     answer = s.twoSum(nums, target)
 
     assert sorted(answer) == [0, 1] 
+
+
+def test_empty():
+    s = Solution()
+
+    nums = []
+    target = 0
+
+    answer = s.twoSum(nums, target)
+    
+    print(answer)
