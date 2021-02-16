@@ -1,0 +1,30 @@
+PROBLEM:
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+SOLUTION:
+The O(n^2) solution should be obvious. For each element, iterate through the rest of the array and see if a matching pair is found. Return the indices of the pair.
+
+The O(n) solution requires O(n) space.
+
+We need to find some way of keeping track of previously seen values.
+
+Rather than track the index at which we've seen any given value, it's better to track the difference between the target value, and the current value. 
+
+For an input array X:
+	X = [x_0, ... x_n] 
+
+We calculate a difference hash D where the key is the difference (t - x_i) and the value is the index i: 
+	D = {d_0 : 0, ..., d_n : n} 
+
+Next, loop over X while filling in D. 
+
+At the same time, we can use O(1) lookup in the hash D's keyset to see if there exists a value which makes a pair with the current value x_i. 
+
+When the pair is found, return it. 
+
+
+Note: The problem guarantees a solution exists, so checking for a null solution isn't required.
