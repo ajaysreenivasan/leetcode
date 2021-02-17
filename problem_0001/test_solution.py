@@ -10,13 +10,3 @@ def test_normal_case():
 
     assert sorted(answer) == [0, 1] 
 
-
-def test_empty():
-    s = Solution()
-
-    nums = []
-    target = 0
-
-    answer = s.twoSum(nums, target)
-    
-    print(answer)

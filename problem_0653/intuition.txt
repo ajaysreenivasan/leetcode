@@ -1,3 +1,39 @@
 PROBLEM:
+ Given the root of a Binary Search Tree and a target number k, return true if there exist two elements in the BST such that their sum is equal to the given target.
 
 SOLUTION:
+ Yet another two sum problem.
+
+- Observations:
+   This is the same as problem_0001 and the others like it.
+
+   The only difference is that the input is a BST. 
+
+   We can approach this a few ways:
+
+    1. Perform any traversal through the input and apply the solution to problem_0001.
+    2. Perform in-order traversal through the input and apply the solution to problem_0167.
+    3. Traverse through the BST and for each node, traverse through the BST again to find a matching pair (while tracking the paths taken/current node so as to not double count a value).
+    4. Perform any traversal while tracking seen values/differences. (This works because the problem only requires we return T/F.)
+
+- Method:
+   Use approach #4 to do something new. 
+
+   Perform any traversal and track "seen" differences (target - cur_node.val).
+
+   Return:
+   - False if a null node is reached
+   - True if the (target - cur_node.val) is a difference which has already been seen
+   
+   * What's important here is that the final return statement of the recursive traversal is an OR.
+     (ie. return traverse(root.left) OR traverse(root.right)) 
+
+- Complexity:
+   TIME:
+         O(n) for tree traversal
+         O(1) for set lookup
+         
+         Overall: O(n)
+
+   SPACE:
+         O(n) for the set
