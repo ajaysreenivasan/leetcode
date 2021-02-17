@@ -6,4 +6,18 @@ Return the indices of the two numbers (1-indexed) as an integer array answer of 
 You may assume that each input would have exactly one solution and you may not use the same element twice.
 
 SOLUTION:
+ The solution for problem_0001 works for this.
 
+- Observations:
+   However, the reason this one is different is that the input array is sorted. This means we can do it in place with a linear scan with two pointers.
+
+   Starting on opposite ends of the input array X = [x_0, ..., x_n], when you sum x_i and x_j where 0 <= i < j < n, there are three conditions:
+
+      1. x_i + x_j > target : move pointer at j left once
+      2. x_i + x_j < target : move pointer at i right once
+      3. x_i + x_j = target : what do you think?
+
+- Method:
+   Iterate through the input with two pointers starting at either end of the array and looping until the solution is found.
+
+NOTE: There is guaranteed to be a solution. 

@@ -26,5 +26,13 @@ SOLUTION:
    
    When the pair is found, return it. 
    
+- Complexity:
+  TIME: O(n) for the scan through the input
+        O(1) for set lookups
+        O(1) for hash inserts
+
+        Overall:  O(n)
+ 
+  SPACE: O(n) for the hash
    
 NOTE: The problem guarantees a solution exists, so checking for a null solution isn't required.

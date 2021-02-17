@@ -1,0 +1,34 @@
+PROBLEM:
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+    Open brackets must be closed by the same type of brackets.
+    Open brackets must be closed in the correct order.
+
+SOLUTION:
+ This is a common interview problem.
+
+ The variant I've usually seen involves just one type of bracket, however the solution is largely the same. 
+
+- Observations:
+   Given the parameters in the problem statement, we need some way to track which bracket has been opened so far. There's no need to track the closing brackets. 
+
+- Method:
+   Use a stack to track open brackets.
+
+   If a closing bracket is seen:
+   - error if the open/close pair don't match
+   - error if there are no open brackets in the stack
+   - pop the matching open bracket off the stack, and continue
+
+   The string is valid if at the end of iterating over the string the stack is empty, and the other error states have not occurred.
+
+- Complexity:
+  TIME: O(n) for the scan through the string
+        
+        Overall: O(n)
+
+  SPACE: O(n) for the stack 
+
+
